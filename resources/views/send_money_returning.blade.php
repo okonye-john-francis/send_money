@@ -10,8 +10,10 @@
     <div class="card-header">Enter account details</div>
     
     <div class="card-body">
-    @include('includes.confirmation_modal')
-    @include('includes.new_customer_form')
+
+    @include('includes.register_new_reciever')
+    @include('includes.returning_customer_form')
+    
 
 
     

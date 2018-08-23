@@ -1,5 +1,5 @@
          
-      <div class="" style="width:100% !important">
+      <div class="" >
       <ul class="nav nav-tabs " id="myTab" role="tablist">
         <li class="nav-item">
           <a class="nav-link active" id="enter-payment-details-tab" data-toggle="tab" href="#enter-payment-details" role="tab" aria-controls="enter-payment-details" aria-selected="true">Enter payment Details</a>

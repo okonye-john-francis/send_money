@@ -65,9 +65,9 @@
           </div>
            
         </div> 
-        <div class="m-3 col-md-12">
-         <button type="submit" class="btn btn-primary">Continue</button>
-        </div> 
+        <div class="col-md-12 m-3">
+            <a type="submit" href="{{url('page_2')}}" data-toggle="modal" data-target="#payment_confirmation" class="btn btn-primary w-25">Continue</a>
+      </div> 
 
 
       </div>
@@ -129,7 +129,8 @@
              
           </div>
           <div class="col-md-12 m-3">
-            <a type="submit" href="{{url('page_2')}}" data-toggle="modal" data-target="#payment_confirmation" class="btn btn-primary">Continue</a>
+            <a type="submit" href="{{url('page_2')}}" data-toggle="modal" data-target="#payment_confirmation" class="btn btn-primary w-25">Continue</a>
+          </div>
           </div>
         
         
