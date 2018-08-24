@@ -190,6 +190,16 @@
     });
 
 
+    $(".number_field").on('keydown',function (evt) {
+        if (!($.isNumeric( evt.key )||(evt.key == "Backspace")))
+        {
+          evt.preventDefault();
+            
+        }
+        
+      });
+
+
   
 });
 

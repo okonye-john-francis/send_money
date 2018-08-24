@@ -144,6 +144,8 @@
       
    
   </form>
+
+  
     
   
 
@@ -152,14 +154,7 @@
       $(function(){
 
 
-      $(".number_field").on('keydown',function (evt) {
-        if (!($.isNumeric( evt.key )||(evt.key == "Backspace")))
-        {
-          evt.preventDefault();
-            
-        }
-        
-      });
+      
 
 
       $("#amount").on('keyup',function (evt) {
@@ -175,12 +170,16 @@
     });
 
     $('.submit').on('click',function(evt) {
-      if(!$('.last-input').val())
+      if(!($('#nav-bank-tab').hasClass('active')||$('#nav-mobile-money-tab').hasClass('active')))
       {
+
+        
         
         evt.preventDefault();
-        $('#nav-bank-tab').addClass('active');
-        $('#nav-bank').addClass('active show');
+        $('#nav-bank-tab').tab('show');
+
+        
+
       }
     });
 

@@ -50,7 +50,7 @@
                           <option value="UGX">UGX</option>
                       </select>
                   </div>
-                  <input type="text" class="form-control" name="amount"  aria-describedby="basic-addon1" required>
+                  <input type="text" class="form-control number-field" name="amount"  aria-describedby="basic-addon1" required>
             </div>
         </div>
 
