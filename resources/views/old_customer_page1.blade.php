@@ -12,6 +12,7 @@
     <div class="card-body">
 
     @include('includes.register_new_reciever')
+    @include('includes.register_new_reciever_acc')
     @include('includes.returning_customer_form')
     
 

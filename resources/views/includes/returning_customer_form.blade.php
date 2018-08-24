@@ -30,8 +30,8 @@
        
             <label for="currency">Receivers Account Number</label>
             <div class="input-group">
-                  <select class="select2 form-control" id="location_id"name="account_id" style="width: 100%; " required>
-                    <option value="">Choose receipients</option>
+                  <select class="select2 form-control rec_account_id" id="rec_account_id" name="rec_account_id" style="width: 100%; " required>
+                    <option value="">Choose receipients account</option>
                     <option value="new">New Account</option>
                     <option value="account_id">089977784444</option>
                     <option value="account_id">089977784444</option>
@@ -75,6 +75,16 @@
               var reciever_id = this.value;
               if(reciever_id =='new'){ 
               $('#new_receiver').modal();
+              }
+
+          });
+
+
+          $('.rec_account_id').on('change',function() {
+              alert(this.value);
+              var reciever_id = this.value;
+              if(reciever_id =='new'){ 
+              $('#new_receiver_acc').modal();
               }
 
           });
