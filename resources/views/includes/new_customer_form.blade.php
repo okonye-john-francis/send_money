@@ -1,20 +1,20 @@
 
-  <form method="post" action="{{url('account')}}">
+  <form method="post" id="form1" name="form1" action="{{url('page_2')}}">
                     {{csrf_field()}}
     <div class="row">
-      <div class="col-md-6">
+      
         <input type="hidden" class="form-control" name="user_type" value="new_user">
-        <div class="form-group form-row m-3"> 
+        <div class="form-group form-row m-3 col-md-6"> 
                            
           <label name="type" for="type">Send Money To</label>
-          <input type="text" name="recname" class="form-control" id="amount" placeholder="eg Receipient Name"  required>
+          <input type="text" name="recname" class="form-control" id="recname" placeholder="eg Receipient Name"  required>
           <div class="invalid-feedback">
             
           </div>
       
         </div>
 
-        <div class="form-group form-row m-3"> 
+        <div class="form-group form-row m-3 col-md-6"> 
        
             <label for="currency">Amount to Send</label>
             <div class="input-group">
@@ -24,14 +24,14 @@
                       <option value="UGX">UGX</option>
                   </select>
               </div>
-              <input type="text" class="form-control" placeholder="eg 100000" aria-label="Username" aria-describedby="basic-addon1">
+              <input type="text" class="form-control amount" id="amount" name="amount" placeholder="eg 100000" aria-label="Username" aria-describedby="basic-addon1">
             </div>
         </div>
-      </div>
-      <div class="col-md-6 text-center mt-5">
-        <p>Cost of transation</p>
-        <p>Exchange Rate: 1 GBP -- 5000 UGX</p>   
-      </div>
+      
+        <div class="form-group form-row m-3 col-md-6">
+          <label for="transation_cost">Transaction cost</label>
+          <input type="text" class="form-control" id="transation_cost" name="transation_cost" readonly="readonly">  
+        </div>
     </div>
 
 
@@ -65,9 +65,7 @@
           </div>
            
         </div> 
-        <div class="col-md-12 m-3">
-            <a type="submit" href="{{url('page_2')}}" data-toggle="modal" data-target="#payment_confirmation" class="btn btn-primary w-25">Continue</a>
-      </div> 
+        
 
 
       </div>
@@ -128,9 +126,7 @@
             </div>
              
           </div>
-          <div class="col-md-12 m-3">
-            <a type="submit" href="{{url('page_2')}}" data-toggle="modal" data-target="#payment_confirmation" class="btn btn-primary w-25">Continue</a>
-          </div>
+          
           </div>
         
         
@@ -142,8 +138,7 @@
       </div>
 
       
-     
-    </div>
+   
   </form>
     
   
@@ -153,7 +148,12 @@
       $(function(){
 
 
+      $("#amount").on('keyup',function() {
+        //alert(typeof this.value);
+        
+        $('#transation_cost').val(this.value * 0.02);
 
+      })
 
       });
     </script>

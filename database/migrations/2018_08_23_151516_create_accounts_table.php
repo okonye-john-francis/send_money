@@ -20,7 +20,7 @@ class CreateAccountsTable extends Migration
             $table->string('account_number');
             $table->string('bank_name')->nullable();
             $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
             $table->timestamps();
             });
     }

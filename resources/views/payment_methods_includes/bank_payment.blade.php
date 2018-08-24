@@ -43,9 +43,7 @@
                 </div>
              
           </div>
-          <div class=" ">
-             <button type="submit" class="btn btn-default">Complete Payment</button>
-          </div> 
+          
     
 
 

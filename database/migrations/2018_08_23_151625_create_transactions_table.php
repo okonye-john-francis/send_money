@@ -18,11 +18,11 @@ class CreateTransactionsTable extends Migration
             $table->increments('id');
             $table->decimal('amount');
             $table->unsignedInteger('sender_account');
-            $table->foreign('sender_account')->references('id')->on('accounts');
+            $table->foreign('sender_account')->references('id')->on('accounts')->onDelete('cascade');;
             $table->payment_mode('cheque','cash','bank_deposit','mobile_money','credit_card');
             $table->state('awaiting_payment','completed','canceled');
             $table->unsignedInteger('reciever_account');
-            $table->foreign('reciever_account')->references('id')->on('accounts');
+            $table->foreign('reciever_account')->references('id')->on('accounts')->onDelete('cascade');;
             $table->timestamp("Created_at");
         });
         

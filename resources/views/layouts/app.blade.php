@@ -37,7 +37,7 @@
         
       }
 
-       .form-line:hover{
+       .hover:hover{
     background-color:  #eeeeee;
   }
   
@@ -142,15 +142,35 @@
 
 
 
-<div class="container-fluid"> 
+<div class="container-fluid row">
+<div class="col-md-8">
+
             @yield('content')
+</div>
+
+
+<div class="col-md-3">
+<div class="card" >
+  <div class="card-header">
+    Exchange rates
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">UGX : GBP <strong>1: 5000</strong></li>
+    <li class="list-group-item">KSH : GBP <strong>1: 1200</strong></li>
+    
+  </ul>
+</div>   
+    
+</div>            
     
 </div>
+
+
 
 <script type="text/javascript">
   $(function() {
 
-  console.log("Master ");
+  
 });
 
 function confSubmit(form) {

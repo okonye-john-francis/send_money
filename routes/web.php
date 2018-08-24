@@ -12,16 +12,31 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('new_customer_page1');
 });
 
 Route::get('/page_1', function () {
-    return view('send_money');
-})->name("send_money");
+    return view('new_customer_page1');
+})->name("new_customer_page1");
+
+
+Route::get('/table', function () {
+    return view('layouts.new_page');
+})->name("new_page");
+
+
+Route::get('/returning_customer', function () {
+    return view('old_customer_page1');
+})->name("returning_customer");
+
 
 Route::get('/page_2', function () {
     return view('send_money_page2');
 })->name("page_2");
+
+Route::get('/page_3', function () {
+    return view('send_money_page3');
+})->name("page_3");
 
 Auth::routes();
 
