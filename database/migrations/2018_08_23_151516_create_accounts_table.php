@@ -16,11 +16,11 @@ class CreateAccountsTable extends Migration
        Schema::create('accounts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('account_name');
-            $table->enum('account_type', [ 'bank_account', 'mobile_money']);
+            $table->enum('account_type', [ 'bank_account', 'mobile_money','wallet']);
             $table->string('account_number');
             $table->string('bank_name')->nullable();
             $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
             });
     }

@@ -20,6 +20,8 @@
         
       }
 
+     
+
       .main-content
       { background-color: red;
         min-height:600px !important;
@@ -52,13 +54,16 @@
   <script src="{{ asset('css_js/js/jquery-min.js') }}"></script>
    <script src="{{ asset('css_js/js/popper.min.js')}}"></script>
     <script src="{{ asset('vendorbootstrap/js/bootstrap.min.js') }}"></script>
-
+ <link rel="stylesheet" href="{{asset('build/css/intlTelInput.css')}}">
+  <link rel="stylesheet" href="{{asset('build/css/demo.css')}}">
 
 
     <script src="{{ asset('css_js/select2/js/select2.min.js') }}"></script>
     <script src="{{ asset('css_js/js/zebra_datepicker.min.js') }}"></script>
     <script type="text/javascript"src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/dataTables.bootstrap4.min.js') }}"></script>
+ <script src="{{asset('intel/build/js/intlTelInput.js')}}"></script>
+
     
 
 
@@ -170,6 +175,21 @@
 <script type="text/javascript">
   $(function() {
 
+
+       $("#phone").intlTelInput({
+       geoIpLookup: function(callback) {
+         $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+           var countryCode = (resp && resp.country) ? resp.country : "";
+          callback(countryCode);
+        });
+      },
+      onlyCountries: ['ug', 'ke', 'rw','gb'],
+      placeholderNumberType: "MOBILE",
+     
+      utilsScript: "build/js/utils.js"
+    });
+
+
   
 });
 
@@ -182,6 +202,7 @@ else {
 return false;
 }
 }
+
 
 </script> 
 

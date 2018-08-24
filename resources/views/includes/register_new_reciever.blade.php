@@ -152,23 +152,22 @@
 
        function show_matching_fields(receiver_account_type)
       {
-        alert( receiver_account_type );
 
         if(receiver_account_type == 'receiver_bank_account')
         {
           $('.rec-mobile-money-fields').hide();
           $('.rec-bank-fields').show();
           console.log('receiver_bank_account');
-          alert('receiver_bank_account');
+          
         }
 
         if(receiver_account_type == 'receiver_mobile_money')
         {
-          alert( receiver_account_type );
+          
           $('.rec-bank-fields').hide();
           $('.rec-mobile-money-fields').show();
           console.log('receiver_mobile_money');
-          alert('receiver_mobile_money');
+          
           
         }
      }

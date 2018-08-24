@@ -15,9 +15,9 @@
 
     
     <!-- @include('includes.returning_customer_form'); -->
-    <div class="row mt-4">
+    <div class="row mt-4 submit_button">
           <a  class="offset-md-2 col-md-3 btn btn-outline-danger" href="{{url('returning_customer')}}" href="{{url('page_2')}}" > Cancel </a>
-          <button class="offset-md-2 col-md-3 btn btn-outline-primary"  type="submit" form="form1" value="Submit" >Proceed</button>
+          <button class="offset-md-2 col-md-3 btn btn-outline-primary submit"  type="submit" form="form1" value="Submit" >Proceed</button>
     </div>
     
 
@@ -31,7 +31,8 @@
 
 
   <script type="text/javascript">
-      
+ 
+
       
   </script> 
 

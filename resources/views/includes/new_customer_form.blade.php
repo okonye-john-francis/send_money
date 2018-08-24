@@ -1,5 +1,5 @@
 
-  <form method="post" id="form1" name="form1" action="{{url('page_2')}}">
+  <form method="get" id="form1" name="form1" action="{{url('page_2')}}" novalidate>
                     {{csrf_field()}}
     <div class="row">
       
@@ -24,7 +24,7 @@
                       <option value="UGX">UGX</option>
                   </select>
               </div>
-              <input type="text" class="form-control amount" id="amount" name="amount" placeholder="eg 100000" aria-label="Username" aria-describedby="basic-addon1">
+              <input type="text" class="form-control amount number_field" id="amount" name="amount" placeholder="eg 100000" aria-label="Username" aria-describedby="basic-addon1">
             </div>
         </div>
       
@@ -46,15 +46,19 @@
     <div class="tab-content m-3" id="nav-tabContent">
       <div class="tab-pane fade" id="nav-mobile-money" role="tabpanel" aria-labelledby="nav-mobile-money-tab">
         <div class="form-row">
-        <div class="m-3 col-md-5">
+          <div class="m-3 col-md-5">
+              
             
-          <label name="type" for="receiver_number">Phone Number</label>
-          <input type="text" name="receiver_number" class="form-control" id="amount" placeholder="eg 07778889"  required>
-          <div class="invalid-feedback">
-           
-          </div>
-           
-        </div> 
+            <label for="name" >Phone Number</label>
+
+            
+            <input id="phone" type="tel" class="form-control number_field " style="width: 100% !important" name="rec_phonenumber" required >
+
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $errors->first('rec_phonenumber') }}</strong>
+            </span>
+                 
+          </div> 
 
         <div class="m-3 col-md-5">
             
@@ -87,7 +91,7 @@
           <div class="col-md-5 m-3">
                   
             <label name="type" for="type">Bank Account Number</label>
-            <input type="text" name="receiver_name" class="form-control" id="amount" placeholder="eg 9000099999445"  required>
+            <input type="text" name="receiver_name" class="form-control last-input" id="amount" placeholder="eg 9000099999445"  required>
             <div class="invalid-feedback">
               
             </div>
@@ -107,7 +111,7 @@
           <div class="col-md-5 m-3">
               
             <label name="type" for="type">Bank Country</label>
-            <input type="text" name="receiver_name" class="form-control" id="amount" placeholder="eg Britain"  required>
+            <input type="text" name="receiver_name" class="form-control " id="amount" placeholder="eg Britain"  required>
             <div class="invalid-feedback">
               
             </div>
@@ -148,12 +152,37 @@
       $(function(){
 
 
-      $("#amount").on('keyup',function() {
-        //alert(typeof this.value);
+      $(".number_field").on('keydown',function (evt) {
+        if (!($.isNumeric( evt.key )||(evt.key == "Backspace")))
+        {
+          evt.preventDefault();
+            
+        }
         
-        $('#transation_cost').val(this.value * 0.02);
-
-      })
-
       });
+
+
+      $("#amount").on('keyup',function (evt) {
+        
+          $('#transation_cost').val(this.value * 0.02);
+            
+      });
+     
+
+    $("button").click(function(){
+    
+    
+    });
+
+    $('.submit').on('click',function(evt) {
+      if(!$('.last-input').val())
+      {
+        
+        evt.preventDefault();
+        $('#nav-bank-tab').addClass('active');
+        $('#nav-bank').addClass('active show');
+      }
+    });
+
+    });
     </script>

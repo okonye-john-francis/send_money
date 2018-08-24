@@ -73,7 +73,6 @@
          
           $('.reciever_id').on('change',function() {
               var reciever_id = this.value;
-              alert(reciever_id);
               if(reciever_id =='new'){ 
               $('#new_receiver').modal();
               }
